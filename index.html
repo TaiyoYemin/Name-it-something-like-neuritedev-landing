@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -113,7 +113,7 @@
         <a href="#problem" class="hover:text-[var(--link-hover)] transition scroll-offset">The Challenge</a>
         <a href="#solution" class="hover:text-[var(--link-hover)] transition scroll-offset">Our Solution</a>
         <a href="#why-us" class="hover:text-[var(--link-hover)] transition scroll-offset">Why Us</a>
-        <a href="#waitlist" class="hover:text-[var(--link-hover)] transition scroll-offset">Get Early Access</a>
+        <a href="#cta" class="hover:text-[var(--link-hover)] transition scroll-offset">Get Early Access</a>
       </nav>
       <div class="flex items-center space-x-4">
         <button id="theme-toggle" aria-label="Toggle theme" class="p-2 rounded-full bg-[var(--accent)] hover:opacity-80 transition focus:outline-none focus:ring-2 focus:ring-[var(--text)]">
@@ -154,101 +154,181 @@
       </div>
     </section>
 
-    <!-- Problem -->
-    <section id="problem" class="py-12 md:py-16 px-4 bg-[var(--bg)] transition-colors duration-300 fade-in scroll-offset">
-      <div class="container mx-auto max-w-xl md:max-w-2xl">
-        <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6">The Hidden Cost of Mental Fatigue</h3>
-        <div class="space-y-4 text-sm sm:text-base md:text-lg text-[var(--text)]">
-          <p>In today’s nonstop world, ignoring your cognitive limits leads to:</p>
-          <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <li class="flex items-start space-x-2">
-              <div class="bg-[var(--text)] p-2 rounded-full animate-bounce flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2"/></svg>
-              </div>
-              <div><strong>Brain Fog:</strong> Lapses in focus and memory.</div>
-            </li>
-            <li class="flex items-start space-x-2">
-              <div class="bg-[var(--text)] p-2 rounded-full animate-bounce flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-              </div>
-              <div><strong>Mental Fatigue:</strong> Slowed thinking and creativity loss.</div>
-            </li>
-            <li class="flex items-start space-x-2">
-              <div class="bg-[var(--text)] p-2 rounded-full animate-bounce flex-shrink-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 18h-1v-4h-1m4-2h.01M8 10h.01M12 6h.01M16 10h.01M12 14h.01"/></svg>
-              </div>
-              <div><strong>Burnout:</strong> Exhaustion and performance decline.</div>
-            </li>
-          </ul>
-          <p>Time trackers show hours, but not how your mind holds up. NeuriteDev fills that gap.</p>
-        </div>
-        <img src="mentalfatigue.png" alt="Mental Fatigue Illustration" class="mx-auto mt-6 rounded-lg shadow-lg object-cover w-full max-w-sm sm:max-w-md" loading="lazy" />
-      </div>
-    </section>
-
-    <!-- Solution -->
-    <section id="solution" class="py-12 md:py-16 px-4 bg-[var(--accent)] bg-opacity-10 transition-colors duration-300 fade-in scroll-offset">
-      <div class="container mx-auto max-w-xl md:max-w-4xl">
-        <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6 text-[var(--text)]">Why NeuriteDev Works</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <div class="bg-[var(--bg)] p-4 md:p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
-            <div class="bg-[var(--text)] p-2 rounded-full mb-2 inline-block animate-bounce">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 11V3h2v8h5l-6 6-6-6h5z"/></svg>
-            </div>
-            <h4 class="text-lg md:text-xl font-semibold text-[var(--text)] mb-1">Instant Dashboard</h4>
-            <p class="text-[var(--text)] text-sm md:text-base">Auto-logged sessions visualized in charts.</p>
-            <img src="Dashboard.png" alt="Instant Dashboard Screenshot" class="mt-2 rounded-lg shadow-md w-full object-cover" loading="lazy" />
-          </div>
-          <div class="bg-[var(--bg)] p-4 md:p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
-            <div class="bg-[var(--text)] p-2 rounded-full mb-2 inline-block animate-bounce">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
-            </div>
-            <h4 class="text-lg md:text-xl font-semibold text-[var(--text)] mb-1">Fatigue Alerts</h4>
-            <p class="text-[var(--text)] text-sm md:text-base">Notifications at critical load.</p>
-            <img src="fatiguealert.png" alt="Fatigue Alerts Screenshot" class="mt-2 rounded-lg shadow-md w-full object-cover" loading="lazy" />
-          </div>
-          <div class="bg-[var(--bg)] p-4 md:p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
-            <div class="bg-[var(--text)] p-2 rounded-full mb-2 inline-block animate-bounce">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            </div>
-            <h4 class="text-lg md:text-xl font-semibold text-[var(--text)] mb-1">Recovery Planning</h4>
-            <p class="text-[var(--text)] text-sm md:text-base">Weekly summaries for rest planning.</p>
-            <img src="focusmeter.png" alt="Recovery Planning Screenshot" class="mt-2 rounded-lg shadow-md w-full object-cover" loading="lazy" />
-          </div>
-        </div>
-        <div class="mt-6 bg-[var(--bg)] p-4 md:p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
-          <div class="bg-[var(--text)] p-2 rounded-full mb-2 inline-block animate-bounce">
+<!-- Problem -->
+<section id="problem" class="py-12 md:py-16 px-4 bg-[var(--bg)] transition-colors duration-300 fade-in scroll-offset">
+  <div class="container mx-auto max-w-xl md:max-w-2xl">
+    <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6">
+      The Hidden Cost of Mental Fatigue
+    </h3>
+    <div class="space-y-4 text-sm sm:text-base md:text-lg text-[var(--text)]">
+      <p>In today’s nonstop world, ignoring your cognitive limits leads to:</p>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <!-- Brain Fog -->
+        <li class="flex items-start space-x-2">
+          <div class="bg-[var(--text)] p-2 rounded-full animate-bounce flex-shrink-0">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-3-3v6m9-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2" />
             </svg>
           </div>
-          <h4 class="text-lg md:text-xl font-semibold text-[var(--text)] mb-1">Why We're the Best Choice</h4>
-          <p class="text-[var(--text)] text-sm md:text-base">
-            NeuriteDev fuses cutting-edge neuroscience with adaptive technology to promote sustained focus and long-term well-being.          </p>
-        </div>
-      </div>
-    </section>
+          <div class="pill-bracket">
+            <strong>Brain Fog:</strong>
+            <ul class="list-disc pl-5 mt-1 text-sm md:text-base space-y-1">
+              <li>Difficulty sustaining attention on tasks</li>
+              <li>Frequent forgetfulness of recent information</li>
+              <li>Overall sense of mental cloudiness</li>
+            </ul>
+          </div>
+        </li>
+        <!-- Mental Fatigue -->
+        <li class="flex items-start space-x-2">
+          <div class="bg-[var(--text)] p-2 rounded-full animate-bounce flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <div class="pill-bracket">
+            <strong>Mental Fatigue:</strong>
+            <ul class="list-disc pl-5 mt-1 text-sm md:text-base space-y-1">
+              <li>Slowed processing speed</li>
+              <li>Diminished creativity and idea generation</li>
+              <li>Difficulty problem‑solving</li>
+              <li>Reduced motivation and drive</li>
+            </ul>
+          </div>
+        </li>
+        <!-- Burnout -->
+        <li class="flex items-start space-x-2">
+          <div class="bg-[var(--text)] p-2 rounded-full animate-bounce flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 18h-1v-4h-1m4-2h.01M8 10h.01M12 6h.01M16 10h.01M12 14h.01" />
+            </svg>
+          </div>
+          <div class="pill-bracket">
+            <strong>Burnout:</strong>
+            <ul class="list-disc pl-5 mt-1 text-sm md:text-base space-y-1">
+              <li>Chronic emotional and physical exhaustion</li>
+              <li>Feeling detached or cynical about work</li>
+              <li>Decline in performance and productivity</li>
+              <li>Loss of sense of accomplishment</li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      <p>
+        Time trackers measure hours, not cognitive peaks and troughs. NeuriteDev fills that critical gap with real‑time, neuroscience‑backed metrics on your focus, stamina, and creative clarity.
+      </p>
+    </div>
+    <img src="mentalfatigue.png" alt="Mental Fatigue Illustration" class="mx-auto mt-6 rounded-lg shadow-lg object-cover w-full max-w-sm sm:max-w-md" loading="lazy" />
+  </div>
+</section>
 
-    <!-- Why Us -->
-    <section id="why-us" class="py-12 md:py-16 px-4 bg-[var(--bg)] transition-colors duration-300 fade-in scroll-offset">
-      <div class="container mx-auto max-w-xl md:max-w-4xl">
-        <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6 text-[var(--text)]">Why Choose NeuriteDev?</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <div class="bg-[var(--accent)] p-4 md:p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
-            <h4 class="text-lg md:text-xl font-semibold text-[var(--text)] mb-1">Built on Real Cognitive Science</h4>
-            <p class="text-[var(--text)] text-sm md:text-base">Grounded in peer-reviewed research by neuroscientists and engineers.</p>
+<!-- Solution -->
+<section id="solution" class="py-12 md:py-16 px-4 bg-[var(--accent)] bg-opacity-10 transition-colors duration-300 fade-in scroll-offset">
+  <div class="container mx-auto max-w-xl md:max-w-4xl">
+    <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6 text-[var(--text)]">Why NeuriteDev Works</h3>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      
+      <!-- Card 1 -->
+      <div class="bg-[var(--bg)] p-4 md:p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+        <div class="bg-[var(--text)] p-2 rounded-full mb-2 inline-block animate-bounce">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 11V3h2v8h5l-6 6-6-6h5z" />
+          </svg>
+        </div>
+        <h4 class="text-lg md:text-xl font-semibold text-[var(--text)] mb-1">Live Focus Dashboard</h4>
+        <p class="text-[var(--text)] text-sm md:text-base">
+          Every focus session is automatically logged and visualized in real-time charts. Explore patterns by day, duration, or fatigue to optimize your work rhythm and stay in control.
+        </p>
+        <img src="Dashboard.png" alt="Instant Dashboard Screenshot" class="mt-2 rounded-lg shadow-md w-full object-cover" loading="lazy" />
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-[var(--bg)] p-4 md:p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+        <div class="bg-[var(--text)] p-2 rounded-full mb-2 inline-block animate-bounce">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+          </svg>
+        </div>
+        <h4 class="text-lg md:text-xl font-semibold text-[var(--text)] mb-1">Smart Fatigue Alerts</h4>
+        <p class="text-[var(--text)] text-sm md:text-base">
+          Based on neuroscience-backed thresholds, NeuriteDev alerts you before cognitive fatigue sets in. Take timely breaks to stay sharp and prevent mental burnout.
+        </p>
+        <img src="fatiguealert.png" alt="Fatigue Alerts Screenshot" class="mt-2 rounded-lg shadow-md w-full object-cover" loading="lazy" />
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-[var(--bg)] p-4 md:p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+        <div class="bg-[var(--text)] p-2 rounded-full mb-2 inline-block animate-bounce">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h4 class="text-lg md:text-xl font-semibold text-[var(--text)] mb-1">Personalized Recovery Plans</h4>
+        <p class="text-[var(--text)] text-sm md:text-base">
+          Get weekly reports that combine your focus patterns with guided recovery suggestions. Balance productivity with wellness to sustain long-term performance.
+        </p>
+        <img src="focusmeter.png" alt="Recovery Planning Screenshot" class="mt-2 rounded-lg shadow-md w-full object-cover" loading="lazy" />
+      </div>
+
+    </div>
+
+    <!-- Closing Highlight -->
+    <div class="mt-6 bg-[var(--bg)] p-4 md:p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+      <div class="bg-[var(--text)] p-2 rounded-full mb-2 inline-block animate-bounce">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-3-3v6m9-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+      <h4 class="text-lg md:text-xl font-semibold text-[var(--text)] mb-1">What Sets Us Apart</h4>
+      <p class="text-[var(--text)] text-sm md:text-base">
+        NeuriteDev isn’t just another productivity tracker. It’s a neuroscience-powered system built for deep focus, seamless hardware syncing, and effortless insights—no manual input required. Designed for thinkers, creators, and anyone chasing clarity.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+  
+      <!-- Why Us -->
+  <section id="why-us" class="py-24 px-8 bg-[--bg] transition-colors duration-300 fade-in">
+    <div class="container mx-auto max-w-4xl">
+      <h3 class="text-4xl font-bold text-center mb-10 text-[--text]">Why Choose NeuriteDev?</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Science-Backed -->
+        <div class="bg-[--accent] p-6 md:p-8 rounded-2xl shadow-md hover:shadow-lg transition transform hover:-translate-y-1">
+          <div class="mb-4 text-[--button]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c.364 0 .724.03 1.08.087m.914.285a4 4 0 10-3.988 6h.01A4.002 4.002 0 0016 12a4 4 0 00-2-3.717z" />
+            </svg>
           </div>
-          <div class="bg-[var(--accent)] p-4 md:p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
-            <h4 class="text-lg md:text-xl font-semibold text-[var(--text)] mb-1">Hardware + Software Synergy</h4>
-            <p class="text-[var(--text)] text-sm md:text-base">Smart pen + app for accurate mental performance tracking.</p>
+          <h4 class="text-2xl font-semibold text-[--text] mb-3">Science-Backed Insights</h4>
+          <p class="text-[--text] text-base">Grounded in peer-reviewed neuroscience, our algorithms translate hard data into clear, actionable recommendations.</p>
+        </div>
+        <!-- Seamless Integration -->
+        <div class="bg-[--accent] p-6 md:p-8 rounded-2xl shadow-md hover:shadow-lg transition transform hover:-translate-y-1">
+          <div class="mb-4 text-[--button]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6h13M9 6l7 7-7 7" />
+            </svg>
           </div>
-          <div class="bg-[var(--accent)] p-4 md:p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
-            <h4 class="text-lg md:text-xl font-semibold text-[var(--text)] mb-1">Community First</h4>
-            <p class="text-[var(--text)] text-sm md:text-base">Early users shape features and direction in our productivity community.</p>
+          <h4 class="text-2xl font-semibold text-[--text] mb-3">Unified Hardware & App</h4>
+          <p class="text-[--text] text-base">Our clip-on device syncs effortlessly with the app for accurate, zero-touch tracking of your mental performance.</p>
+        </div>
+        <!-- Community-driven -->
+        <div class="bg-[--accent] p-6 md:p-8 rounded-2xl shadow-md hover:shadow-lg transition transform hover:-translate-y-1">
+          <div class="mb-4 text-[--button]">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
           </div>
+          <h4 class="text-2xl font-semibold text-[--text] mb-3">Community-Driven Growth</h4>
+          <p class="text-[--text] text-base">Shape features alongside a dedicated community—your feedback directly influences our roadmap.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
     <!-- Screenshots -->
     <section id="screenshots" class="py-12 md:py-16 px-4 bg-[var(--accent)] bg-opacity-10 transition-colors duration-300 fade-in scroll-offset">
