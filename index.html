@@ -105,41 +105,43 @@
 <body class="font-sans leading-relaxed overflow-x-hidden">
   <!-- Skip link for accessibility -->
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-[var(--button-bg)] text-white px-3 py-2 rounded">Skip to content</a>
-
-  <!-- Navbar -->
-  <header class="fixed top-0 left-0 w-full shadow-md z-50 opacity-0 fade-in">
-    <div class="container mx-auto px-4 md:px-8 py-6 flex justify-between items-center" style="height: var(--header-height);">
-      <a href="#hero" class="text-2xl md:text-3xl font-bold" aria-label="Go to top">NeuriteDev</a>
-      <!-- Desktop nav -->
-      <nav class="hidden md:flex space-x-8 text-base" aria-label="Primary navigation">
-        <a href="#problem" class="hover:text-[var(--link-hover)] transition scroll-offset">The Challenge</a>
-        <a href="#solution" class="hover:text-[var(--link-hover)] transition scroll-offset">Our Solution</a>
-        <a href="#why-us" class="hover:text-[var(--link-hover)] transition scroll-offset">Why Us</a>
-        <a href="#cta" class="hover:text-[var(--link-hover)] transition scroll-offset">Get Early Access</a>
-      </nav>
-      <div class="flex items-center space-x-4">
-        <button id="theme-toggle" aria-label="Toggle theme" class="p-2 rounded-full bg-[var(--accent)] hover:opacity-80 transition focus:outline-none focus:ring-2 focus:ring-[var(--text)]">
-          <span id="icon-light" class="hidden" aria-hidden="true">🌞</span>
-          <span id="icon-dark" aria-hidden="true">🌙</span>
-        </button>
-        <!-- Mobile menu button -->
-        <button id="mobile-menu-button" class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--text)]" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--text)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-    </div>
-    <!-- Mobile nav menu -->
-    <nav id="mobile-menu" class="hidden bg-[var(--nav-bg)] backdrop-blur-sm border-t border-[var(--accent)]" role="menu">
-      <div class="px-4 pt-2 pb-4 space-y-1">
-        <a href="#problem" class="block py-2 hover:text-[var(--link-hover)] transition scroll-offset" role="menuitem">The Challenge</a>
-        <a href="#solution" class="block py-2 hover:text-[var(--link-hover)] transition scroll-offset" role="menuitem">Our Solution</a>
-        <a href="#why-us" class="block py-2 hover:text-[var(--link-hover)] transition scroll-offset" role="menuitem">Why Us</a>
-        <a href="#waitlist" class="block py-2 hover:text-[var(--link-hover)] transition scroll-offset" role="menuitem">Get Early Access</a>
-      </div>
+<header class="fixed top-0 left-0 w-full shadow-md z-50 opacity-0 fade-in">
+  <div class="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center" style="height: var(--header-height);">
+    <a href="#hero" class="flex items-center space-x-2" aria-label="Go to top">
+      <img src="NeuroLyst_Logo-removebg-preview.png" alt="NeuriteDev logo" class="h-8 sm:h-10 w-auto" loading="lazy" />
+      <span class="text-2xl md:text-3xl font-bold">NeuriteDev</span>
+    </a>
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex space-x-8 text-base" aria-label="Primary navigation">
+      <a href="#problem" class="hover:text-[var(--link-hover)] transition scroll-offset">The Challenge</a>
+      <a href="#solution" class="hover:text-[var(--link-hover)] transition scroll-offset">Our Solution</a>
+      <a href="#why-us" class="hover:text-[var(--link-hover)] transition scroll-offset">Why Us</a>
+      <a href="#cta" class="hover:text-[var(--link-hover)] transition scroll-offset">Get Early Access</a>
     </nav>
-  </header>
+    <div class="flex items-center space-x-4">
+      <button id="theme-toggle" aria-label="Toggle theme" class="p-2 rounded-full bg-[var(--accent)] hover:opacity-80 transition focus:outline-none focus:ring-2 focus:ring-[var(--text)]">
+        <span id="icon-light" class="hidden" aria-hidden="true">🌞</span>
+        <span id="icon-dark" aria-hidden="true">🌙</span>
+      </button>
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-button" class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--text)]" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--text)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile nav menu -->
+  <nav id="mobile-menu" class="hidden bg-[var(--nav-bg)] backdrop-blur-sm border-t border-[var(--accent)]" role="menu">
+    <div class="px-4 pt-2 pb-4 space-y-1">
+      <a href="#problem" class="block py-2 hover:text-[var(--link-hover)] transition scroll-offset" role="menuitem">The Challenge</a>
+      <a href="#solution" class="block py-2 hover:text-[var(--link-hover)] transition scroll-offset" role="menuitem">Our Solution</a>
+      <a href="#why-us" class="block py-2 hover:text-[var(--link-hover)] transition scroll-offset" role="menuitem">Why Us</a>
+      <a href="#waitlist" class="block py-2 hover:text-[var(--link-hover)] transition scroll-offset" role="menuitem">Get Early Access</a>
+    </div>
+  </nav>
+</header>
+
 
 <main id="main-content" class="pt-28 md:pt-32">
   <!-- Hero -->
