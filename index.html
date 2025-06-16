@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+  <link rel="icon" href="NeuroLyst_Logo-removebg-preview.ico" type="image/x-icon" />
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -139,20 +141,76 @@
     </nav>
   </header>
 
-  <main id="main-content" class="pt-28 md:pt-32"> <!-- Adjust padding for navbar -->
-    <!-- Hero -->
-    <section id="hero" class="pt-8 pb-24 md:pb-32 text-center px-4 bg-[var(--accent)] bg-opacity-10 transition-colors duration-300 fade-in scroll-offset">
-      <div class="container mx-auto max-w-lg">
-        <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4">Feel Better, Focus Better</h2>
-        <p class="text-lg sm:text-xl text-[var(--text)] mb-6">Built with neuroscience, NeuriteDev tracks your mental fatigue in real time and delivers personalized recovery insights - helping you study smarter, not harder.</p>
-        <img src="Dashboard.png" alt="Dashboard Mockup" class="mx-auto mb-6 rounded-lg shadow-lg w-full max-w-xs sm:max-w-sm md:max-w-md object-cover hover:rotate-1 hover:scale-105 transition-transform duration-300" loading="lazy" />
-        <form id="waitlist" action="#" method="post" class="flex flex-col sm:flex-row justify-center max-w-md mx-auto gap-2 scroll-offset" aria-label="Join waitlist form">
-          <label for="email-input" class="sr-only">Email address</label>
-          <input id="email-input" name="email" type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-md sm:rounded-r-none border border-[var(--text)] bg-[var(--bg)] text-[var(--text)] focus:outline-none focus:ring-2 focus:ring-[var(--text)] text-base transition-colors duration-300" required aria-required="true" />
-          <button class="bg-[var(--button-bg)] hover:bg-opacity-90 text-white px-6 py-3 rounded-md sm:rounded-l-none font-semibold hover:opacity-90 transition animate-pulse-btn" style="animation-duration: 2s; animation-iteration-count: infinite;" type="submit">Join Waitlist</button>
-        </form>
-      </div>
-    </section>
+<main id="main-content" class="pt-28 md:pt-32">
+  <!-- Hero -->
+  <section id="hero" class="pt-8 pb-24 md:pb-32 text-center px-4 bg-[var(--accent)] bg-opacity-10 transition-colors duration-300 fade-in scroll-offset">
+    <div class="container mx-auto max-w-lg">
+      <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4">
+        Study Smarter with Real-Time Cognitive Insights
+      </h2>
+      <p class="text-lg sm:text-xl text-[var(--text)] mb-6">
+        Built with neuroscience, NeuriteDev tracks your mental fatigue in real time and delivers personalized recovery insights—helping you study smarter, not harder.
+      </p>
+      <img
+        src="Dashboard.png"
+        alt="Dashboard Mockup"
+        class="mx-auto mb-6 rounded-lg shadow-lg w-full max-w-xs sm:max-w-sm md:max-w-md object-cover hover:rotate-1 hover:scale-105 transition-transform duration-300"
+        loading="lazy"
+      />
+      <form
+        id="waitlist"
+        action="#"
+        method="post"
+        class="flex flex-col sm:flex-row justify-center max-w-md mx-auto gap-2 scroll-offset"
+        aria-label="Join waitlist form"
+      >
+        <label for="email-input" class="sr-only">Email address</label>
+        <input
+          id="email-input"
+          name="email"
+          type="email"
+          placeholder="Your email address"
+          class="flex-grow px-4 py-3 rounded-md sm:rounded-r-none border border-[var(--text)] bg-[var(--bg)] text-[var(--text)] focus:outline-none focus:ring-2 focus:ring-[var(--text)] text-base transition-colors duration-300"
+          required
+          aria-required="true"
+        />
+        <button
+          class="bg-[var(--button-bg)] hover:bg-opacity-90 text-white px-6 py-3 rounded-md sm:rounded-l-none font-semibold hover:opacity-90 transition animate-pulse-btn"
+          style="animation-duration: 2s; animation-iteration-count: infinite;"
+          type="submit"
+        >
+          Join Waitlist
+        </button>
+      </form>
+
+        <ul class="mt-6 flex flex-col sm:flex-row justify-center gap-6">
+        <li class="flex flex-col items-center space-y-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--button-bg)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          <p class="text-sm font-semibold">Free Early Access</p>
+        </li>
+        <li class="flex flex-col items-center space-y-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--button-bg)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          <p class="text-sm font-semibold">Quick Setup</p>
+        </li>
+        <li class="flex flex-col items-center space-y-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--button-bg)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          <p class="text-sm font-semibold">Live Fatigue Alerts</p>
+        </li>
+      </ul>
+      <p class="text-xs text-[var(--text-muted)] mt-4">
+        Completely free—reserve your spot and shape the future of NeuriteDev.
+      </p>
+    </div>
+
+  </section>
+</main>
+
 
 <!-- Problem -->
 <section id="problem" class="py-12 md:py-16 px-4 bg-[var(--bg)] transition-colors duration-300 fade-in scroll-offset">
