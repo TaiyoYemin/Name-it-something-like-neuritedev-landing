@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeuriteDev | Real Focus, Real Results</title>
+  <meta name="description" content="NeuriteDev: Track mental fatigue and optimize study sessions with real-time analytics, smart alerts, and community features." />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="NeuriteDev | Real Focus, Real Results" />
+  <meta property="og:description" content="Track mental fatigue and optimize study sessions with real-time analytics, smart alerts, and community features." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NeuriteDev | Real Focus, Real Results" />
+  <meta name="twitter:description" content="Track mental fatigue and optimize study sessions with real-time analytics, smart alerts, and community features." />
+  <meta name="twitter:image" content="https://yourdomain.com/og-image.jpg" />
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://yourdomain.com" />
+  <!-- Smooth scrolling -->
+  <style>html { scroll-behavior: smooth; }</style>
+  <script src="https://cdn.tailwindcss.com" defer></script>
+  <style>
+    /* Theme variables for light/dark modes */
+    :root {
+      --bg-light: #f7f7f7;
+      --text-light: #1f1f1f;
+      --accent-light: #e2e2e2;
+      --button-light: #3b82f6; /* blue-500 */
+
+      --bg-dark: #121212;
+      --text-dark: #e0e0e0;
+      --accent-dark: #1f1f1f;
+      --button-dark: #2563eb; /* blue-600 */
+
+      --link-hover-light: #2563eb;
+      --link-hover-dark: #60a5fa;
+      --header-height: 6rem; /* adjust if navbar height changes */
+    }
+    html[data-theme="light"] {
+      --bg: var(--bg-light);
+      --text: var(--text-light);
+      --accent: var(--accent-light);
+      --button-bg: var(--button-light);
+      --link-hover: var(--link-hover-light);
+      --nav-bg: rgba(255,255,255,0.8);
+      --nav-backdrop: blur(10px);
+    }
+    html[data-theme="dark"] {
+      --bg: var(--bg-dark);
+      --text: var(--text-dark);
+      --accent: var(--accent-dark);
+      --button-bg: var(--button-dark);
+      --link-hover: var(--link-hover-dark);
+      --nav-bg: rgba(18,18,18,0.8);
+      --nav-backdrop: blur(10px);
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+    .fade-in.show { opacity: 1; transform: translateY(0); }
+    @keyframes pulse-btn { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+    /* Ensure header transition */
+    header {
+      background-color: var(--nav-bg);
+      backdrop-filter: var(--nav-backdrop);
+      height: var(--header-height);
+    }
+    /* Scroll-to-top button */
+    #scroll-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background-color: var(--button-bg);
+      color: #fff;
+      padding: 0.5rem;
+      border-radius: 9999px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 50;
+      transition: opacity 0.3s;
+    }
+    #scroll-top.show { display: flex; }
+    /* Ensure sections with anchor offset below fixed header */
+    .scroll-offset { scroll-margin-top: var(--header-height); }
+    /* Accessible focus outline */
+    a:focus, button:focus, input:focus {
+      outline: 2px dashed var(--button-bg);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="font-sans leading-relaxed overflow-x-hidden">
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-[var(--button-bg)] text-white px-3 py-2 rounded">Skip to content</a>
+
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 w-full shadow-md z-50 opacity-0 fade-in">
+    <div class="container mx-auto px-4 md:px-8 py-6 flex justify-between items-center" style="height: var(--header-height);">
+      <a href="#hero" class="text-2xl md:text-3xl font-bold" aria-label="Go to top">NeuriteDev</a>
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex space-x-8 text-base" aria-label="Primary navigation">
+        <a href="#problem" class="hover:text-[var(--link-hover)] transition scroll-offset">The Challenge</a>
+        <a href="#solution" class="hover:text-[var(--link-hover)] transition scroll-offset">Our Solution</a>
+        <a href="#why-us" class="hover:text-[var(--link-hover)] transition scroll-offset">Why Us</a>
+        <a href="#waitlist" class="hover:text-[var(--link-hover)] transition scroll-offset">Get Early Access</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+        <button id="theme-toggle" aria-label="Toggle theme" class="p-2 rounded-full bg-[var(--accent)] hover:opacity-80 transition focus:outline-none focus:ring-2 focus:ring-[var(--text)]">
+          <span id="icon-light" class="hidden" aria-hidden="true">🌞</span>
+          <span id="icon-dark" aria-hidden="true">🌙</span>
+        </button>
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-button" class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--text)]" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--text)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile nav menu -->
+    <nav id="mobile-menu" class="hidden bg-[var(--nav-bg)] backdrop-blur-sm border-t border-[var(--accent)]" role="menu">
+      <div class="px-4 pt-2 pb-4 space-y-1">
+        <a href="#problem" class="block py-2 hover:text-[var(--link-hover)] transition scroll-offset" role="menuitem">The Challenge</a>
+        <a href="#solution" class="block py-2 hover:text-[var(--link-hover)] transition scroll-offset" role="menuitem">Our Solution</a>
+        <a href="#why-us" class="block py-2 hover:text-[var(--link-hover)] transition scroll-offset" role="menuitem">Why Us</a>
+        <a href="#waitlist" class="block py-2 hover:text-[var(--link-hover)] transition scroll-offset" role="menuitem">Get Early Access</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content" class="pt-28 md:pt-32"> <!-- Adjust padding for navbar -->
+    <!-- Hero -->
+    <section id="hero" class="pt-8 pb-24 md:pb-32 text-center px-4 bg-[var(--accent)] bg-opacity-10 transition-colors duration-300 fade-in scroll-offset">
+      <div class="container mx-auto max-w-lg">
+        <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4">Feel Better, Focus Better</h2>
+        <p class="text-lg sm:text-xl text-[var(--text)] mb-6">Built with neuroscience, NeuriteDev tracks your mental fatigue in real time and delivers personalized recovery insights - helping you study smarter, not harder.</p>
+        <img src="Dashboard.png" alt="Dashboard Mockup" class="mx-auto mb-6 rounded-lg shadow-lg w-full max-w-xs sm:max-w-sm md:max-w-md object-cover hover:rotate-1 hover:scale-105 transition-transform duration-300" loading="lazy" />
+        <form id="waitlist" action="#" method="post" class="flex flex-col sm:flex-row justify-center max-w-md mx-auto gap-2 scroll-offset" aria-label="Join waitlist form">
+          <label for="email-input" class="sr-only">Email address</label>
+          <input id="email-input" name="email" type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-md sm:rounded-r-none border border-[var(--text)] bg-[var(--bg)] text-[var(--text)] focus:outline-none focus:ring-2 focus:ring-[var(--text)] text-base transition-colors duration-300" required aria-required="true" />
+          <button class="bg-[var(--button-bg)] hover:bg-opacity-90 text-white px-6 py-3 rounded-md sm:rounded-l-none font-semibold hover:opacity-90 transition animate-pulse-btn" style="animation-duration: 2s; animation-iteration-count: infinite;" type="submit">Join Waitlist</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section id="problem" class="py-12 md:py-16 px-4 bg-[var(--bg)] transition-colors duration-300 fade-in scroll-offset">
+      <div class="container mx-auto max-w-xl md:max-w-2xl">
+        <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6">The Hidden Cost of Mental Fatigue</h3>
+        <div class="space-y-4 text-sm sm:text-base md:text-lg text-[var(--text)]">
+          <p>In today’s nonstop world, ignoring your cognitive limits leads to:</p>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <li class="flex items-start space-x-2">
+              <div class="bg-[var(--text)] p-2 rounded-full animate-bounce flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6l4 2"/></svg>
+              </div>
+              <div><strong>Brain Fog:</strong> Lapses in focus and memory.</div>
+            </li>
+            <li class="flex items-start space-x-2">
+              <div class="bg-[var(--text)] p-2 rounded-full animate-bounce flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              </div>
+              <div><strong>Mental Fatigue:</strong> Slowed thinking and creativity loss.</div>
+            </li>
+            <li class="flex items-start space-x-2">
+              <div class="bg-[var(--text)] p-2 rounded-full animate-bounce flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 18h-1v-4h-1m4-2h.01M8 10h.01M12 6h.01M16 10h.01M12 14h.01"/></svg>
+              </div>
+              <div><strong>Burnout:</strong> Exhaustion and performance decline.</div>
+            </li>
+          </ul>
+          <p>Time trackers show hours, but not how your mind holds up. NeuriteDev fills that gap.</p>
+        </div>
+        <img src="mentalfatigue.png" alt="Mental Fatigue Illustration" class="mx-auto mt-6 rounded-lg shadow-lg object-cover w-full max-w-sm sm:max-w-md" loading="lazy" />
+      </div>
+    </section>
+
+    <!-- Solution -->
+    <section id="solution" class="py-12 md:py-16 px-4 bg-[var(--accent)] bg-opacity-10 transition-colors duration-300 fade-in scroll-offset">
+      <div class="container mx-auto max-w-xl md:max-w-4xl">
+        <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6 text-[var(--text)]">Why NeuriteDev Works</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div class="bg-[var(--bg)] p-4 md:p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+            <div class="bg-[var(--text)] p-2 rounded-full mb-2 inline-block animate-bounce">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 11V3h2v8h5l-6 6-6-6h5z"/></svg>
+            </div>
+            <h4 class="text-lg md:text-xl font-semibold text-[var(--text)] mb-1">Instant Dashboard</h4>
+            <p class="text-[var(--text)] text-sm md:text-base">Auto-logged sessions visualized in charts.</p>
+            <img src="https://source.unsplash.com/400x300/?analytics,chart" alt="Instant Dashboard Screenshot" class="mt-2 rounded-lg shadow-md w-full object-cover" loading="lazy" />
+          </div>
+          <div class="bg-[var(--bg)] p-4 md:p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+            <div class="bg-[var(--text)] p-2 rounded-full mb-2 inline-block animate-bounce">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+            </div>
+            <h4 class="text-lg md:text-xl font-semibold text-[var(--text)] mb-1">Fatigue Alerts</h4>
+            <p class="text-[var(--text)] text-sm md:text-base">Notifications at critical load.</p>
+            <img src="https://source.unsplash.com/400x300/?notification,alert" alt="Fatigue Alerts Screenshot" class="mt-2 rounded-lg shadow-md w-full object-cover" loading="lazy" />
+          </div>
+          <div class="bg-[var(--bg)] p-4 md:p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+            <div class="bg-[var(--text)] p-2 rounded-full mb-2 inline-block animate-bounce">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h4 class="text-lg md:text-xl font-semibold text-[var(--text)] mb-1">Recovery Planning</h4>
+            <p class="text-[var(--text)] text-sm md:text-base">Weekly summaries for rest planning.</p>
+            <img src="https://source.unsplash.com/400x300/?planning,calendar" alt="Recovery Planning Screenshot" class="mt-2 rounded-lg shadow-md w-full object-cover" loading="lazy" />
+          </div>
+        </div>
+        <div class="mt-6 bg-[var(--bg)] p-4 md:p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+          <div class="bg-[var(--text)] p-2 rounded-full mb-2 inline-block animate-bounce">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-3-3v6m9-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h4 class="text-lg md:text-xl font-semibold text-[var(--text)] mb-1">Why We're the Best Choice</h4>
+          <p class="text-[var(--text)] text-sm md:text-base">
+            NeuriteDev fuses cutting-edge neuroscience with adaptive technology to promote sustained focus and long-term well-being.          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Us -->
+    <section id="why-us" class="py-12 md:py-16 px-4 bg-[var(--bg)] transition-colors duration-300 fade-in scroll-offset">
+      <div class="container mx-auto max-w-xl md:max-w-4xl">
+        <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-6 text-[var(--text)]">Why Choose NeuriteDev?</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div class="bg-[var(--accent)] p-4 md:p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+            <h4 class="text-lg md:text-xl font-semibold text-[var(--text)] mb-1">Built on Real Cognitive Science</h4>
+            <p class="text-[var(--text)] text-sm md:text-base">Grounded in peer-reviewed research by neuroscientists and engineers.</p>
+          </div>
+          <div class="bg-[var(--accent)] p-4 md:p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+            <h4 class="text-lg md:text-xl font-semibold text-[var(--text)] mb-1">Hardware + Software Synergy</h4>
+            <p class="text-[var(--text)] text-sm md:text-base">Smart pen + app for accurate mental performance tracking.</p>
+          </div>
+          <div class="bg-[var(--accent)] p-4 md:p-6 rounded-lg shadow-lg hover:shadow-xl transition transform hover:-translate-y-1">
+            <h4 class="text-lg md:text-xl font-semibold text-[var(--text)] mb-1">Community First</h4>
+            <p class="text-[var(--text)] text-sm md:text-base">Early users shape features and direction in our productivity community.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section id="screenshots" class="py-12 md:py-16 px-4 bg-[var(--accent)] bg-opacity-10 transition-colors duration-300 fade-in scroll-offset">
+      <div class="container mx-auto text-center">
+        <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mb-4 text-[var(--text)]">Sneak Peek: App Screenshots</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <img src="focusmeter.png" alt="Focus Meter Screen" class="rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 w-full object-cover" loading="lazy" />
+          <img src="fatiguealert.png" alt="Fatigue Alert Screen" class="rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 w-full object-cover delay-75" loading="lazy" />
+          <img src="weekly dashboard.png" alt="Weekly Dashboard Screen" class="rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300 w-full object-cover delay-150" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" class="py-12 md:py-16 px-4 text-center bg-[var(--bg)] transition-colors duration-300 fade-in scroll-offset">
+      <div class="container mx-auto max-w-md md:max-w-lg">
+        <h4 class="text-xl sm:text-2xl md:text-3xl font-bold mb-4 text-[var(--text)]">Ready to Elevate Your Focus?</h4>
+        <p class="text-[var(--text)] text-sm sm:text-base md:text-lg mb-4">Join our early-access program and experience the future of cognitive health tracking.</p>
+        <!-- Keep email input but button scrolls -->
+        <div class="flex flex-col sm:flex-row justify-center gap-2">
+          <label for="cta-email" class="sr-only">Email address</label>
+          <input id="cta-email" name="email" type="email" placeholder="Enter your email" class="flex-grow px-4 py-3 rounded-md sm:rounded-r-none border border-[var(--text)] bg-[var(--bg)] text-[var(--text)] focus:outline-none focus:ring-2 focus:ring-[var(--text)] text-base transition-colors duration-300" required aria-required="true" />
+          <button id="cta-button" class="bg-[var(--button-bg)] hover:bg-opacity-90 text-white px-6 py-3 rounded-md sm:rounded-l-none font-semibold hover:opacity-90 transition animate-pulse-btn" style="animation-duration:2.5s; animation-iteration-count: infinite;" type="button">Get Early Access</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-6 md:py-8 bg-[var(--bg)] text-center text-xs sm:text-sm text-[var(--text)] transition-colors duration-300 fade-in scroll-offset">
+    <div class="container mx-auto px-4 md:px-8">
+      <p>&copy; 2025 NeuriteDev. All rights reserved.</p>
+      <div class="mt-3 space-x-3">
+        <a href="#" class="hover:text-[var(--link-hover)]">Privacy</a>
+        <a href="#" class="hover:text-[var(--link-hover)]">Terms</a>
+        <a href="#" class="hover:text-[var(--link-hover)]">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <div id="scroll-top" aria-label="Scroll to top">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+    </svg>
+  </div>
+
+  <script>
+    // Theme persistence
+    const themeToggle = () => {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.getElementById('icon-dark').classList.toggle('hidden');
+      document.getElementById('icon-light').classList.toggle('hidden');
+    };
+    document.getElementById('theme-toggle').addEventListener('click', themeToggle);
+    // Mobile menu toggle with aria-expanded
+    const mobileBtn = document.getElementById('mobile-menu-button');
+    mobileBtn.addEventListener('click', () => {
+      const menu = document.getElementById('mobile-menu');
+      const expanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+      mobileBtn.setAttribute('aria-expanded', String(!expanded));
+      menu.classList.toggle('hidden');
+    });
+    // Scroll-to-top logic
+    const scrollBtn = document.getElementById('scroll-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) scrollBtn.classList.add('show'); else scrollBtn.classList.remove('show');
+    });
+    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    // Highlight active nav links
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a');
+    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.6 };
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const id = entry.target.getAttribute('id');
+        const link = document.querySelector(`nav a[href="#${id}"]`);
+        if (entry.isIntersecting) {
+          navLinks.forEach(a => a.classList.remove('underline'));
+          if (link) link.classList.add('underline');
+        }
+      });
+    }, observerOptions);
+    sections.forEach(sec => sectionObserver.observe(sec));
+    // CTA button scroll to waitlist
+    document.getElementById('cta-button').addEventListener('click', () => {
+      const target = document.getElementById('waitlist');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+    // Initialize theme and animations on load
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('theme');
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+        if (saved === 'light') {
+          document.getElementById('icon-dark').classList.add('hidden');
+          document.getElementById('icon-light').classList.remove('hidden');
+        }
+      }
+      // Observe fade-in elements
+      const faders = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      faders.forEach(el => observer.observe(el));
+      // Reveal navbar after load
+      const header = document.querySelector('header');
+      if (header) header.classList.add('show');
+    });
+  </script>
+</body>
+</html>
