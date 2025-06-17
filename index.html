@@ -1,155 +1,69 @@
-<!DOCTYPE html>
 <html lang="en" data-theme="light">
   <link rel="icon" href="NeuroLyst_Logo.png" type="image/x-icon" />
-
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NeuriteDev | Real Focus, Real Results</title>
   <meta name="description" content="NeuriteDev: Track mental fatigue and optimize study sessions with real-time analytics, smart alerts, and community features." />
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="NeuriteDev | Real Focus, Real Results" />
-  <meta property="og:description" content="Track mental fatigue and optimize study sessions with real-time analytics, smart alerts, and community features." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://yourdomain.com" />
-  <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="NeuriteDev | Real Focus, Real Results" />
-  <meta name="twitter:description" content="Track mental fatigue and optimize study sessions with real-time analytics, smart alerts, and community features." />
-  <meta name="twitter:image" content="https://yourdomain.com/og-image.jpg" />
-  <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico" />
-  <!-- Canonical -->
-  <link rel="canonical" href="https://yourdomain.com" />
   <!-- Smooth scrolling -->
   <style>html { scroll-behavior: smooth; }</style>
   <script src="https://cdn.tailwindcss.com" defer></script>
   <style>
-    /* Theme variables for light/dark modes */
-    :root {
-      --bg-light: #f7f7f7;
-      --text-light: #1f1f1f;
-      --accent-light: #e2e2e2;
-      --button-light: #3b82f6; /* blue-500 */
-
-      --bg-dark: #121212;
-      --text-dark: #e0e0e0;
-      --accent-dark: #1f1f1f;
-      --button-dark: #2563eb; /* blue-600 */
-
-      --link-hover-light: #2563eb;
-      --link-hover-dark: #60a5fa;
-      --header-height: 6rem; /* adjust if navbar height changes */
-    }
-    html[data-theme="light"] {
-      --bg: var(--bg-light);
-      --text: var(--text-light);
-      --accent: var(--accent-light);
-      --button-bg: var(--button-light);
-      --link-hover: var(--link-hover-light);
-      --nav-bg: rgba(255,255,255,0.8);
-      --nav-backdrop: blur(10px);
-    }
-    html[data-theme="dark"] {
-      --bg: var(--bg-dark);
-      --text: var(--text-dark);
-      --accent: var(--accent-dark);
-      --button-bg: var(--button-dark);
-      --link-hover: var(--link-hover-dark);
-      --nav-bg: rgba(18,18,18,0.8);
-      --nav-backdrop: blur(10px);
-    }
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      margin: 0;
-      padding: 0;
-      transition: background-color 0.3s, color 0.3s;
-    }
-    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+    :root { --header-height: 6rem; }
+    html[data-theme="light"] { --bg: #f7f7f7; --text: #1f1f1f; --accent: #e2e2e2; --button-bg: #3b82f6; --link-hover: #2563eb; --nav-bg: rgba(255,255,255,0.95); --nav-backdrop: blur(10px); }
+    html[data-theme="dark"] { --bg: #121212; --text: #e0e0e0; --accent: #1f1f1f; --button-bg: #2563eb; --link-hover: #60a5fa; --nav-bg: rgba(18,18,18,0.95); --nav-backdrop: blur(10px); }
+    body { background: var(--bg); color: var(--text); margin: 0; padding: 0; transition: .3s; }
+    header { background: var(--nav-bg); backdrop-filter: var(--nav-backdrop); height: var(--header-height); }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: .6s; }
     .fade-in.show { opacity: 1; transform: translateY(0); }
-    @keyframes pulse-btn { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-    /* Ensure header transition */
-    header {
-      background-color: var(--nav-bg);
-      backdrop-filter: var(--nav-backdrop);
-      height: var(--header-height);
-    }
-    /* Scroll-to-top button */
-    #scroll-top {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      background-color: var(--button-bg);
-      color: #fff;
-      padding: 0.5rem;
-      border-radius: 9999px;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      z-index: 50;
-      transition: opacity 0.3s;
-    }
+    #scroll-top { @apply fixed bottom-8 right-8 bg-[var(--button-bg)] text-white p-3 rounded-full hidden z-50; }
     #scroll-top.show { display: flex; }
-    /* Ensure sections with anchor offset below fixed header */
-    .scroll-offset { scroll-margin-top: var(--header-height); }
-    /* Accessible focus outline */
-    a:focus, button:focus, input:focus {
-      outline: 2px dashed var(--button-bg);
-      outline-offset: 2px;
-    }
+    a:focus, button:focus, input:focus { outline: 2px dashed var(--button-bg); outline-offset: 2px; }
   </style>
 </head>
 <body class="font-sans leading-relaxed overflow-x-hidden">
-  <!-- Skip link for accessibility -->
   <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-[var(--button-bg)] text-white px-3 py-2 rounded">Skip to content</a>
-<header class="fixed top-0 left-0 w-full shadow-md z-50 opacity-0 fade-in">
-  <div class="container mx-auto px-4 md:px-8 py-4 flex justify-between items-center" style="height: var(--header-height);">
-    <a href="#hero" class="flex items-center space-x-2" aria-label="Go to top">
-      <img src="NeuroLyst_Logo.png" alt="NeuriteDev logo" class="h-8 sm:h-10 w-auto" loading="lazy" />
-      <span class="text-2xl md:text-3xl font-bold">NeuriteDev</span>
-    </a>
-    <!-- Desktop nav -->
-    <nav class="hidden md:flex space-x-8 text-base" aria-label="Primary navigation">
-      <a href="#problem" class="hover:text-[var(--link-hover)] transition scroll-offset">The Challenge</a>
-      <a href="#solution" class="hover:text-[var(--link-hover)] transition scroll-offset">Our Solution</a>
-      <a href="#why-us" class="hover:text-[var(--link-hover)] transition scroll-offset">Why Us</a>
-      <a href="#cta" class="hover:text-[var(--link-hover)] transition scroll-offset">Get Early Access</a>
+
+  <header class="fixed top-0 w-full shadow-md z-50 opacity-0 fade-in">
+    <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center h-full">
+      <a href="#hero" class="flex items-center space-x-3">
+        <img src="NeuroLyst_Logo.png" alt="Logo" class="h-10 md:h-12 w-auto" />
+        <span class="text-2xl md:text-3xl font-bold">NeuriteDev</span>
+      </a>
+      <!-- Mobile menu button (always visible) -->
+      <div class="flex items-center space-x-4">
+        <button id="theme-toggle" class="p-2 rounded-full bg-[var(--accent)] hover:opacity-80 transition focus:ring-2 focus:ring-[var(--text)]" aria-label="Toggle theme">
+          <span id="icon-dark" class="hidden">🌞</span><span id="icon-light">🌙</span>
+        </button>
+        <button id="mobile-menu-button" class="p-2 rounded-md focus:ring-2 focus:ring-[var(--text)]" aria-label="Toggle menu">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- Unified menu (visible on all screen sizes when toggled) -->
+    <nav id="mobile-menu" class="hidden bg-[var(--nav-bg)] backdrop-blur-sm border-t border-[var(--accent)]">
+      <div class="px-6 py-4 space-y-2">
+        <a href="#problem" class="block hover:text-[var(--link-hover)]">The Challenge</a>
+        <a href="#solution" class="block hover:text-[var(--link-hover)]">Our Solution</a>
+        <a href="#why-us" class="block hover:text-[var(--link-hover)]">Why Us</a>
+        <a href="#cta" class="block hover:text-[var(--link-hover)]">Get Early Access</a>
+        <a href="#login" class="block mt-2 px-4 py-2 border border-[var(--button-bg)] rounded-md text-center hover:bg-[var(--button-bg)] hover:text-white transition">Login</a>
+        <a href="#register" class="block mt-2 px-4 py-2 bg-[var(--button-bg)] text-center text-white rounded-md hover:opacity-90 transition">Register</a>
+      </div>
     </nav>
-    <div class="flex items-center space-x-4">
-      <button id="theme-toggle" aria-label="Toggle theme" class="p-2 rounded-full bg-[var(--accent)] hover:opacity-80 transition focus:outline-none focus:ring-2 focus:ring-[var(--text)]">
-        <span id="icon-light" class="hidden" aria-hidden="true">🌞</span>
-        <span id="icon-dark" aria-hidden="true">🌙</span>
-      </button>
-      <!-- Mobile menu button -->
-      <button id="mobile-menu-button" class="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--text)]" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[var(--text)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-    </div>
-  </div>
-  <!-- Mobile nav menu -->
-  <nav id="mobile-menu" class="hidden bg-[var(--nav-bg)] backdrop-blur-sm border-t border-[var(--accent)]" role="menu">
-    <div class="px-4 pt-2 pb-4 space-y-1">
-      <a href="#problem" class="block py-2 hover:text-[var(--link-hover)] transition scroll-offset" role="menuitem">The Challenge</a>
-      <a href="#solution" class="block py-2 hover:text-[var(--link-hover)] transition scroll-offset" role="menuitem">Our Solution</a>
-      <a href="#why-us" class="block py-2 hover:text-[var(--link-hover)] transition scroll-offset" role="menuitem">Why Us</a>
-      <a href="#waitlist" class="block py-2 hover:text-[var(--link-hover)] transition scroll-offset" role="menuitem">Get Early Access</a>
-    </div>
-  </nav>
-</header>
-
-
-<main id="main-content" class="pt-28 md:pt-32">
+  </header>
+<main id="main-content" class="pt-24">
   <!-- Hero -->
   <section id="hero" class="pt-8 pb-24 md:pb-32 text-center px-4 bg-[var(--accent)] bg-opacity-10 transition-colors duration-300 fade-in scroll-offset">
     <div class="container mx-auto max-w-lg">
-      <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4">
-        Study Smarter with Real-Time Cognitive Insights
-      </h2>
+         <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 leading-tight max-w-xl mx-auto">
+    Study Smarter<br class="sm:block hidden" />
+    with Real-Time Cognitive Insights
+  </h2>
+
       <p class="text-lg sm:text-xl text-[var(--text)] mb-6">
 Powered by neuroscience, NeuriteDev tracks cognitive load in real time, issues actionable break prompts, and guides you in building lasting study habits to sustain peak focus and prevent burnout.
       </p>
@@ -352,8 +266,7 @@ Powered by neuroscience, NeuriteDev tracks cognitive load in real time, issues a
       You’ve pushed through long sessions only to feel drained and unsure if it’s working. NeuriteDev brings you gentle, science-backed signals—blending neuroscience insights, seamless hardware integration, and a caring community—so you can focus deeply, rest when needed, and build habits that stick without extra effort.
       </p>
       <p class="text-sm text-[var(--text-muted)] text-center mt-6">
-  Get free early access and join others committed to lasting cognitive well-being.
-</p>
+      We’re currently in early access and offer NeuriteDev completely free while we grow our community and gather feedback</p>
 
     </div>
     
